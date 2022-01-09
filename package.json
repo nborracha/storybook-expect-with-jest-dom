@@ -1,0 +1,36 @@
+{
+  "name": "storybook-expect-with-jest-dom",
+  "version": "1.0.0",
+  "description": "Extended version of expect function including the jest-dom helpers for Storybook Interactions",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nborracha/storybook-expect-with-jest-dom.git"
+  },
+  "scripts": {
+    "build": "yarn build:esm && yarn build:cjs",
+    "build:esm": "tsc --project tsconfig.esm.json",
+    "build:cjs": "tsc --project tsconfig.cjs.json",
+    "prepublish": "yarn build"
+  },
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "license": "MIT",
+  "files": [
+    "dist/**/*"
+  ],
+  "types": "./dist/types/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@storybook/expect": "^27.4.6",
+    "@storybook/instrumenter": "6.4.9",
+    "@testing-library/jest-dom": "^5.16.1"
+  },
+  "devDependencies": {
+    "@types/testing-library__jest-dom": "*",
+    "@types/react": "*",
+    "expect": "^27.3.1",
+    "typescript": "^4.4.3"
+  }
+}
